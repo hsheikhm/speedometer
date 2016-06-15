@@ -12,7 +12,7 @@
     function($routeProvider){
       $routeProvider.
         when('/speedometer', {
-          templateUrl: 'views/main-page.html',
+          templateUrl: 'src/views/main-page.html',
           controller: 'MainCtrl',
           controllerAs: 'main'
         }).

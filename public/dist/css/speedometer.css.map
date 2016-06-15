@@ -1,0 +1,7 @@
+{
+"version": 3,
+"mappings": "AAAA,IAAI;EACF,gBAAgB,EAAE,GAAG",
+"sources": ["../../src/css/sass/speedometer.sass"],
+"names": [],
+"file": "speedometer.css"
+}
