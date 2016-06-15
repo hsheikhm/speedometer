@@ -1,7 +1,7 @@
 {
 "version": 3,
-"mappings": "AAAA,IAAI;EACF,WAAW,ECDS,qBAAqB",
-"sources": ["../../src/css/sass/_main-page.sass","../../src/css/sass/_variables.sass"],
+"mappings": "AAAA,iBAAiB;EACf,QAAQ,EAAE,QAAQ;;AAGlB,oBAAU;EACR,iBAAiB,EAAE,UAAY;EAC/B,cAAc,EAAE,UAAY;EAC5B,YAAY,EAAE,UAAY;EAC1B,SAAS,EAAE,UAAY;EACvB,OAAO,EAAE,GAAG;;;;IAIZ,OAAO,EAAE,CAAC;;IAEV,OAAO,EAAE,CAAC;;;IAIV,OAAO,EAAE,CAAC;;IAEV,OAAO,EAAE,CAAC;;;IAIV,OAAO,EAAE,CAAC;;IAEV,OAAO,EAAE,CAAC;AC3Bd,IAAI;EACF,WAAW,ECDS,qBAAqB",
+"sources": ["../../src/css/sass/_animations.sass","../../src/css/sass/_main-page.sass","../../src/css/sass/_variables.sass"],
 "names": [],
 "file": "speedometer.css"
 }
