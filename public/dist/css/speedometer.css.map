@@ -1,7 +1,7 @@
 {
 "version": 3,
-"mappings": "AAAA,IAAI;EACF,gBAAgB,EAAE,GAAG",
-"sources": ["../../src/css/sass/speedometer.sass"],
+"mappings": "AAAA,IAAI;EACF,WAAW,ECDS,qBAAqB",
+"sources": ["../../src/css/sass/_main-page.sass","../../src/css/sass/_variables.sass"],
 "names": [],
 "file": "speedometer.css"
 }
