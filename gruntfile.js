@@ -10,8 +10,8 @@
           separator: '\n// next file:\n'
         },
         dist: {
-          src: ['public/js/*.js'],
-          dest: 'dist/js/<%= pkg.name %>.js'
+          src: ['public/src/js/*.js'],
+          dest: 'public/dist/js/<%= pkg.name %>.js'
         }
       },
 
@@ -21,13 +21,13 @@
         },
         dist: {
           files: {
-            'dist/js/<%= pkg.name %>.min.js': ['<%= concat.dist.dest %>']
+            'public/dist/js/<%= pkg.name %>.min.js': ['<%= concat.dist.dest %>']
           }
         }
       },
 
       jshint: {
-        files: ['gruntfile.js', 'public/js/*.js', 'test/**/*.js'],
+        files: ['gruntfile.js', 'public/src/js/*.js', 'test/**/*.js'],
         options: {
           globals: {
             jQuery: true,
@@ -40,7 +40,7 @@
       sass: {
         dev: {
           files: {
-            "dist/css/<%= pkg.name %>.css" : "public/css/sass/<%= pkg.name %>.sass"
+            "public/dist/css/<%= pkg.name %>.css" : "public/src/css/sass/<%= pkg.name %>.sass"
           }
         }
       },
@@ -52,14 +52,14 @@
         },
         target: {
           files: {
-            'dist/css/<%= pkg.name %>.min.css': ['dist/css/<%= pkg.name %>.css']
+            'public/dist/css/<%= pkg.name %>.min.css': ['public/dist/css/<%= pkg.name %>.css']
           }
         }
       },
 
       watch: {
         sass: {
-          files: "public/css/sass/*.sass",
+          files: "public/src/css/sass/*.sass",
           tasks: ['sass']
         },
         app: {
@@ -68,7 +68,7 @@
         }
       },
 
-      clean: ['<%= concat.dist.dest %>', 'dist/js/<%= pkg.name %>.min.js']
+      clean: ['<%= concat.dist.dest %>', 'public/dist/js/<%= pkg.name %>.min.js']
 
     });
 

@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en" ng-app="speedometerApp">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <title>Speedometer</title>
+    <link rel="stylesheet" href="dist/css/speedometer.min.css">
+  </head>
+  <body>
+
+    <main>
+      <div class="view-outer-frame">
+        <div ng-view class="view-frame"></div>
+      </div>
+    </main>
+
+    <script src="bower_components/jquery/dist/jquery.js"></script>
+    <script src="bower_components/angular/angular.min.js"></script>
+    <script src="bower_components/angular-animate/angular-animate.js"></script>
+    <script src="bower_components/angular-route/angular-route.js"></script>
+    <script src="bower_components/angular-resource/angular-resource.js"></script>
+    <script src="dist/js/speedometer.min.js"></script>
+  </body>
+</html>
