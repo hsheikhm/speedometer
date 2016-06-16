@@ -5,16 +5,14 @@ main
   height: 300px
   width: 300px
   margin: auto
-  margin-top: 100px
+  margin-top: 140px
   border-radius: 50%
   padding-top: 20px
   padding-bottom: 20px
-  +primary-box-shadow
+  +primary-box-shadow(6px)
 
   &:hover
-    -webkit-box-shadow: 0 0 25px 15px rgba(143,140,143,0.75)
-    -moz-box-shadow: 0 0 25px 15px rgba(143,140,143,0.75)
-    box-shadow: 0 0 25px 15px rgba(143,140,143,.75)
+    +primary-box-shadow(15px)
 
 .main-page__number-display__text
   font-size: 10em
@@ -32,7 +30,7 @@ i.left
   font-size: 1.6rem
 
 .main-page__interval-setter
-  width: 355px
+  width: 390px
   margin: auto
   margin-top: 40px
 
@@ -44,18 +42,21 @@ i.left
 
 .interval-setter__middle-section
   display: flex
-  margin-top: 10px
+  margin-top: 22px
 
 .middle-section__every-word
   font-size: 20px
   font-variant: small-caps
   font-weight: bold
   margin-right: 25px
+  margin-top: 7px
 
 .middle-section__seconds-word
   font-size: 20px
   font-variant: small-caps
   font-weight: bold
+  margin-top: 7px
+  margin-left: 10px
 
 .middle-section__interval-numbers
   display: flex
@@ -70,6 +71,30 @@ i.left
   font-weight: bold
   margin-left: 5px
   margin-right: 5px
-  -webkit-box-shadow: 0 0 25px -1px rgba(143,140,143,.75)
-  -moz-box-shadow: 0 0 25px -1px rgba(143,140,143,.75)
-  box-shadow: 0 0 25px -1px rgba(143,140,143,.75)
+  +primary-box-shadow(-1px)
+
+.middle-section__arrow-buttons
+  margin-top: 5px
+  margin-left: 5px
+  display: inline-flex
+
+.increase-button
+  +rotate(270deg)
+  height: 55px
+  width: 55px
+
+  &:hover
+    color: #0d47a1
+
+.decrease-button
+  +rotate(90deg)
+  height: 55px
+  width: 55px
+  color: #ff5252
+  margin-top: -16px
+
+  &:hover
+    color: #d50000
+
+.arrow
+  font-size: 65px
