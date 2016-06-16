@@ -1,10 +1,9 @@
 (function(){
-  // "use strict";
 
   var speedometerAppFactories = angular.module('speedometerAppFactories', []);
 
   speedometerAppFactories.factory('Speedometer', function(){
-    function speedometer() {
+    function speedometer(){
 
       this.interval = 1;
 
@@ -33,6 +32,40 @@
 
     }
     return speedometer;
+  });
+
+  speedometerAppFactories.factory('Countdown', function(){
+    function countdown(){
+
+      this.number = 0;
+
+      this.setTo = function(number){
+        this.number = number;
+      };
+
+      this.play = function(){
+        this.number--;
+      };
+
+      this.isFinished = function(){
+        return this.number === 0;
+      };
+
+      this.restart = function(startingNumber){
+        this.number = startingNumber;
+      };
+
+      this.formatNumber = function(){
+        var num = this.number;
+        return (num < 10) ? '0' + num.toString() : num.toString();
+      };
+
+      this.updateNumber = function(){
+        return this.formatNumber().split("");
+      };
+
+    }
+    return countdown;
   });
 
 }());
