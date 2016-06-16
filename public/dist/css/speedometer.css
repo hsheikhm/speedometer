@@ -55,7 +55,7 @@ main {
 
 .main-page__number-display__text {
   font-size: 12em;
-  font-weight: 100; }
+  font-weight: 200; }
 
 .refresh-page-button {
   margin-top: 20px;
@@ -158,10 +158,8 @@ main {
     background-color: #d50000; }
 
 .main_page__countdown {
-  padding: 30px;
-  padding-top: 10px;
-  margin-top: -268px;
-  margin-right: -70px; }
+  margin-top: -262px;
+  margin-right: -35px; }
 
 .main_page__countdown__title {
   font-style: italic;
@@ -174,16 +172,15 @@ main {
   display: flex; }
 
 .countdown-digit {
-  height: 115px;
+  height: 114px;
   width: 100px;
-  font-size: 85px;
-  font-weight: 100;
+  font-size: 71px;
+  font-weight: 300;
   margin-left: 5px;
   margin-right: 5px;
-  color: #ffff00;
-  background-color: #263238;
-  -webkit-box-shadow: 0px 0px 25px 5px rgba(143, 140, 143, 0.75);
-  -moz-box-shadow: 0px 0px 25px 5px rgba(143, 140, 143, 0.75);
-  box-shadow: 0px 0px 25px 5px rgba(143, 140, 143, 0.75); }
+  color: #b71c1c;
+  -webkit-box-shadow: 0px 0px 25px 2px rgba(143, 140, 143, 0.75);
+  -moz-box-shadow: 0px 0px 25px 2px rgba(143, 140, 143, 0.75);
+  box-shadow: 0px 0px 25px 2px rgba(143, 140, 143, 0.75); }
 
 /*# sourceMappingURL=speedometer.css.map */
