@@ -59,6 +59,9 @@
     };
 
     $scope.updateCountdownNumber = function(){
+      if($scope.countdownNumber === 0){
+        $scope.countdownNumber = $scope.intervalNumber;
+      }
       $scope.countdownNumberParts = $scope.formatNumber($scope.countdownNumber).split("");
     };
 
