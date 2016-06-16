@@ -26,11 +26,20 @@
 main {
   font-family: "Raleway", sans-serif; }
 
+.main-page__heading {
+  margin-top: 33px; }
+
+.main-page__heading__text {
+  font-style: italic;
+  font-variant: small-caps;
+  font-weight: 100;
+  font-size: 56px; }
+
 .main-page__number-display {
   height: 300px;
   width: 300px;
   margin: auto;
-  margin-top: 140px;
+  margin-top: 30px;
   border-radius: 50%;
   padding-top: 20px;
   padding-bottom: 20px;
