@@ -20,6 +20,23 @@
       $route.reload();
     };
 
+    $scope.intervalNumber = 1;
+
+    $scope.formatNumber = function(num){
+      return (num < 10) ? '0' + num.toString() : num.toString();
+    };
+
+    $scope.updateIntervalNumber = function(){
+      $scope.intervalNumberParts = $scope.formatNumber($scope.intervalNumber).split("");
+    };
+
+    $scope.updateIntervalNumber();
+
+    $scope.increaseInterval = function(){
+      $scope.intervalNumber++;
+      $scope.updateIntervalNumber();
+    };
+
   }]);
 
 }());
