@@ -58,11 +58,11 @@
       $scope.startTimer = function(){
         countdown.setTo(speedometer.interval);
         $scope.updateCountdown();
-        $scope.intervalTimer = $interval($scope.changeNumber, speedometer.interval * 1000);
+        $scope.intervalTimer = $interval($scope.changeMainNumber, speedometer.interval * 1000);
         $scope.countdownTimer = $interval($scope.startCountdown, 1000);
       };
 
-      $scope.changeNumber = function(){
+      $scope.changeMainNumber = function(){
         $scope.mainNumber = speedometer.generateRandomNumber();
       };
 
@@ -91,7 +91,6 @@
 
 // next file:
 (function(){
-  // "use strict";
 
   var speedometerAppFactories = angular.module('speedometerAppFactories', []);
 
