@@ -2,16 +2,13 @@
 
   <div class="container">
 
-    <div class="main-page__heading center-align">
+    <div class="main-page__top-section">
+      <a class="btn-floating waves-effect waves-light btn-large refresh-page-button" ng-click="refreshPage()"><i class="material-icons">loop</i></a>
       <h4 class="main-page__heading__text">Speedometer</h4>
     </div>
 
     <div class="main-page__number-display center-align">
       <span class="main-page__number-display__text">{{ mainNumber }}</span>
-    </div>
-
-    <div class="main-page__refresh-page-feature center-align">
-      <a class="waves-effect waves-light btn refresh-page-link" ng-click="refreshPage()"><i class="material-icons left">loop</i>Refresh Page</a>
     </div>
 
     <div class="main-page__interval-setter center-align">
@@ -29,13 +26,10 @@
           </div>
           <span class="middle-section__seconds-word">Seconds</span>
         </div>
-
-
-
-
-
-        <!-- <a class="btn-floating btn-large waves-effect waves-light red" ng-click="startTimer()"><i class="material-icons">play_arrow</i></a>
-        <a class="btn-floating btn-large waves-effect waves-light red" ng-click="stopTimer()"><i class="material-icons">stop</i></a> -->
+        <div class="interval-setter__bottom-section">
+          <a class="waves-effect waves-light btn start-timer-button" ng-click="startTimer()">Start</a>
+          <a class="waves-effect waves-light btn stop-timer-button" ng-click="stopTimer()">Stop</a>
+        </div>
       </div>
     </div>
 

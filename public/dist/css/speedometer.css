@@ -26,8 +26,11 @@
 main {
   font-family: "Raleway", sans-serif; }
 
-.main-page__heading {
-  margin-top: 33px; }
+.main-page__top-section {
+  display: flex;
+  width: 373px;
+  margin: auto;
+  margin-top: 8px; }
 
 .main-page__heading__text {
   font-style: italic;
@@ -36,13 +39,12 @@ main {
   font-size: 56px; }
 
 .main-page__number-display {
-  height: 300px;
-  width: 300px;
+  height: 330px;
+  width: 330px;
   margin: auto;
-  margin-top: 30px;
+  margin-top: 23px;
   border-radius: 50%;
-  padding-top: 20px;
-  padding-bottom: 20px;
+  padding-top: 14px;
   -webkit-box-shadow: 0px 0px 25px 6px rgba(143, 140, 143, 0.75);
   -moz-box-shadow: 0px 0px 25px 6px rgba(143, 140, 143, 0.75);
   box-shadow: 0px 0px 25px 6px rgba(143, 140, 143, 0.75); }
@@ -52,24 +54,22 @@ main {
     box-shadow: 0px 0px 25px 15px rgba(143, 140, 143, 0.75); }
 
 .main-page__number-display__text {
-  font-size: 10em;
+  font-size: 12em;
   font-weight: 100; }
 
-.main-page__refresh-page-feature {
-  margin-top: 40px; }
-
-.refresh-page-link {
-  padding-left: 10px;
-  padding-right: 10px; }
-
-i.left {
-  margin-right: 5px;
-  font-size: 1.6rem; }
+.refresh-page-button {
+  margin-top: 20px;
+  margin-right: 20px; }
+  .refresh-page-button i {
+    font-size: 2.6rem; }
+    .refresh-page-button i:hover {
+      font-size: 2.8rem; }
 
 .main-page__interval-setter {
   width: 390px;
   margin: auto;
-  margin-top: 40px; }
+  margin-top: 40px;
+  margin-bottom: 20px; }
 
 .interval-setter__title {
   font-style: italic;
@@ -132,12 +132,29 @@ i.left {
   transform: rotate(90deg);
   height: 55px;
   width: 55px;
-  color: #ff5252;
   margin-top: -16px; }
   .decrease-button:hover {
-    color: #d50000; }
+    color: #0d47a1; }
 
 .arrow {
   font-size: 65px; }
+
+.interval-setter__bottom-section {
+  margin-top: 22px; }
+
+.start-timer-button {
+  padding-left: 12px;
+  padding-right: 12px;
+  background-color: #388e3c; }
+  .start-timer-button:hover {
+    background-color: #1b5e20; }
+
+.stop-timer-button {
+  padding-left: 16px;
+  padding-right: 16px;
+  background-color: #ff5252;
+  margin-left: 10px; }
+  .stop-timer-button:hover {
+    background-color: #d50000; }
 
 /*# sourceMappingURL=speedometer.css.map */
