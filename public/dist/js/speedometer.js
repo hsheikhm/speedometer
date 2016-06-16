@@ -42,11 +42,24 @@
     $scope.intervalNumber = 1;
 
     $scope.startTimer = function(){
+      $scope.countdownNumber = $scope.intervalNumber;
+      $scope.updateCountdownNumber();
       $scope.timer = $interval($scope.generateRandomNumber, $scope.intervalNumber * 1000);
+      $scope.countdownTimer = $interval($scope.startCountdown, 1000);
     };
 
     $scope.stopTimer = function(){
       $interval.cancel($scope.timer);
+      $interval.cancel($scope.countdownTimer);
+    };
+
+    $scope.startCountdown = function(){
+      $scope.countdownNumber--;
+      $scope.updateCountdownNumber();
+    };
+
+    $scope.updateCountdownNumber = function(){
+      $scope.countdownNumberParts = $scope.formatNumber($scope.countdownNumber).split("");
     };
 
     $scope.refreshPage = function(){
