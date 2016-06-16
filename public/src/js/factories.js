@@ -55,10 +55,6 @@
         return this.number === 0;
       };
 
-      this.restart = function(startingNumber){
-        this.number = startingNumber;
-      };
-
       this.formatNumber = function(){
         var num = this.number;
         return (num < 10) ? '0' + num.toString() : num.toString();

@@ -30,7 +30,7 @@ main {
   height: 300px;
   width: 300px;
   margin: auto;
-  margin-top: 160px;
+  margin-top: 100px;
   border-radius: 50%;
   padding-top: 20px;
   padding-bottom: 20px;
@@ -48,5 +48,56 @@ main {
 
 .main-page__refresh-page-feature {
   margin-top: 40px; }
+
+.refresh-page-link {
+  padding-left: 10px;
+  padding-right: 10px; }
+
+i.left {
+  margin-right: 5px;
+  font-size: 1.6rem; }
+
+.main-page__interval-setter {
+  width: 355px;
+  margin: auto;
+  margin-top: 40px; }
+
+.interval-setter__title {
+  font-style: italic;
+  font-variant: small-caps;
+  font-weight: bold;
+  font-size: 23px; }
+
+.interval-setter__middle-section {
+  display: flex;
+  margin-top: 10px; }
+
+.middle-section__every-word {
+  font-size: 20px;
+  font-variant: small-caps;
+  font-weight: bold;
+  margin-right: 25px; }
+
+.middle-section__seconds-word {
+  font-size: 20px;
+  font-variant: small-caps;
+  font-weight: bold; }
+
+.middle-section__interval-numbers {
+  display: flex;
+  width: 140px; }
+
+.interval-number {
+  height: 50px;
+  width: 50px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  font-size: 27px;
+  font-weight: bold;
+  margin-left: 5px;
+  margin-right: 5px;
+  -webkit-box-shadow: 0 0 25px -1px rgba(143, 140, 143, 0.75);
+  -moz-box-shadow: 0 0 25px -1px rgba(143, 140, 143, 0.75);
+  box-shadow: 0 0 25px -1px rgba(143, 140, 143, 0.75); }
 
 /*# sourceMappingURL=speedometer.css.map */

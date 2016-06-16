@@ -1,26 +1,45 @@
 <section class="main-page">
 
   <div class="container">
+
     <div class="main-page__number-display center-align">
       <span class="main-page__number-display__text">{{ mainNumber }}</span>
     </div>
+
     <div class="main-page__refresh-page-feature center-align">
-      <a class="waves-effect waves-light btn" ng-click="refreshPage()"><i class="material-icons left">loop</i>Refresh Page</a>
+      <a class="waves-effect waves-light btn refresh-page-link" ng-click="refreshPage()"><i class="material-icons left">loop</i>Refresh Page</a>
     </div>
-    <div class="main-page__interval-setter">
+
+    <div class="main-page__interval-setter center-align">
       <div class="main-page__interval-setter__center-box">
-        <div>{{ intervalNumberParts[0] }}</div>
-        <div>{{ intervalNumberParts[1] }}</div>
-        <button type="button" name="button" ng-click="increase()">Up</button>
-        <button type="button" name="button" ng-click="decrease()">Down</button>
-        <a class="btn-floating btn-large waves-effect waves-light red" ng-click="startTimer()"><i class="material-icons">play_arrow</i></a>
-        <a class="btn-floating btn-large waves-effect waves-light red" ng-click="stopTimer()"><i class="material-icons">stop</i></a>
+        <span class="interval-setter__title">Set Interval</span>
+        <div class="interval-setter__middle-section">
+          <span class="middle-section__every-word">Every</span>
+          <div class="middle-section__interval-numbers">
+            <div class="interval-number">{{ intervalNumberParts[0] }}</div>
+            <div class="interval-number">{{ intervalNumberParts[1] }}</div>
+          </div>
+          <div class="middle-section__arrow-buttons">
+            <a class="waves-effect waves-light increase-button" ng-click="increase()"><i class="material-icons">play_arrow</i></a>
+            <a class="waves-effect waves-light decrease-button" ng-click="decrease()"><i class="material-icons">play_arrow</i></a>
+          </div>
+          <span class="middle-section__seconds-word">Seconds</span>
+        </div>
+
+
+
+
+
+        <!-- <a class="btn-floating btn-large waves-effect waves-light red" ng-click="startTimer()"><i class="material-icons">play_arrow</i></a>
+        <a class="btn-floating btn-large waves-effect waves-light red" ng-click="stopTimer()"><i class="material-icons">stop</i></a> -->
       </div>
     </div>
+
     <div class="main_page__countdown-timer">
       <div>{{ countdownNumberParts[0] }}</div>
       <div>{{ countdownNumberParts[1] }}</div>
     </div>
+
   </div>
 
 </section>
