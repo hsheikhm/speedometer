@@ -11,6 +11,14 @@
       <span class="main-page__number-display__text">{{ mainNumber }}</span>
     </div>
 
+    <div class="main_page__countdown right center-align">
+      <span class="main_page__countdown__title">Next Number</span>
+      <div class="main_page__countdown__numbers">
+        <div class="countdown-digit">{{ countdownNumberParts[0] }}</div>
+        <div class="countdown-digit">{{ countdownNumberParts[1] }}</div>
+      </div>
+    </div>
+
     <div class="main-page__interval-setter center-align">
       <div class="main-page__interval-setter__center-box">
         <span class="interval-setter__title">Set Interval</span>
@@ -31,11 +39,6 @@
           <a class="waves-effect waves-light btn stop-timer-button" ng-click="stopTimer()">Stop</a>
         </div>
       </div>
-    </div>
-
-    <div class="main_page__countdown-timer">
-      <div>{{ countdownNumberParts[0] }}</div>
-      <div>{{ countdownNumberParts[1] }}</div>
     </div>
 
   </div>
