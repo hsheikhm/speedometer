@@ -2,7 +2,7 @@
 
   <div class="container">
     <div class="main-page__number-display center-align">
-      <span class="main-page__number-display__text">{{ randomNumber }}</span>
+      <span class="main-page__number-display__text">{{ mainNumber }}</span>
     </div>
     <div class="main-page__refresh-page-feature center-align">
       <a class="waves-effect waves-light btn" ng-click="refreshPage()"><i class="material-icons left">loop</i>Refresh Page</a>
@@ -11,8 +11,8 @@
       <div class="main-page__interval-setter__center-box">
         <div>{{ intervalNumberParts[0] }}</div>
         <div>{{ intervalNumberParts[1] }}</div>
-        <button type="button" name="button" ng-click="increaseInterval()">Up</button>
-        <button type="button" name="button" ng-click="decreaseInterval()">Down</button>
+        <button type="button" name="button" ng-click="increase()">Up</button>
+        <button type="button" name="button" ng-click="decrease()">Down</button>
         <a class="btn-floating btn-large waves-effect waves-light red" ng-click="startTimer()"><i class="material-icons">play_arrow</i></a>
         <a class="btn-floating btn-large waves-effect waves-light red" ng-click="stopTimer()"><i class="material-icons">stop</i></a>
       </div>
