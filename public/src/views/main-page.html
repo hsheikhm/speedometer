@@ -1,5 +1,26 @@
-<div>
-  {{ randomNumber }}
-</div>
+<section class="main-page">
 
-<a class="btn-floating btn-large waves-effect waves-light red" ng-click="startTimer()"><i class="material-icons">add</i></a>
+  <div class="container">
+    <div class="main-page__number-display center-align">
+      <span class="main-page__number-display__text">{{ randomNumber }}</span>
+    </div>
+    <div class="main-page__refresh-page-feature center-align">
+      <a class="waves-effect waves-light btn" ng-click="refreshPage()"><i class="material-icons left">loop</i>Refresh Page</a>
+    </div>
+    <div class="main-page__interval-setter">
+      <div class="main-page__interval-setter__center-box">
+        <div>{{ intervalNumberParts[0] }}</div>
+        <div>{{ intervalNumberParts[1] }}</div>
+        <button type="button" name="button" ng-click="increaseInterval()">Up</button>
+        <button type="button" name="button" ng-click="decreaseInterval()">Down</button>
+        <a class="btn-floating btn-large waves-effect waves-light red" ng-click="startTimer()"><i class="material-icons">play_arrow</i></a>
+        <a class="btn-floating btn-large waves-effect waves-light red" ng-click="stopTimer()"><i class="material-icons">stop</i></a>
+      </div>
+    </div>
+    <div class="main_page__countdown-timer">
+      <div>{{ countdownNumberParts[0] }}</div>
+      <div>{{ countdownNumberParts[1] }}</div>
+    </div>
+  </div>
+
+</section>

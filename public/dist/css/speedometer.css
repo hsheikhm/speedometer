@@ -26,4 +26,27 @@
 main {
   font-family: "Raleway", sans-serif; }
 
+.main-page__number-display {
+  height: 300px;
+  width: 300px;
+  margin: auto;
+  margin-top: 160px;
+  border-radius: 50%;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  -webkit-box-shadow: 0px 0px 25px 6px rgba(143, 140, 143, 0.75);
+  -moz-box-shadow: 0px 0px 25px 6px rgba(143, 140, 143, 0.75);
+  box-shadow: 0px 0px 25px 6px rgba(143, 140, 143, 0.75); }
+  .main-page__number-display:hover {
+    -webkit-box-shadow: 0 0 25px 15px rgba(143, 140, 143, 0.75);
+    -moz-box-shadow: 0 0 25px 15px rgba(143, 140, 143, 0.75);
+    box-shadow: 0 0 25px 15px rgba(143, 140, 143, 0.75); }
+
+.main-page__number-display__text {
+  font-size: 10em;
+  font-weight: 100; }
+
+.main-page__refresh-page-feature {
+  margin-top: 40px; }
+
 /*# sourceMappingURL=speedometer.css.map */
