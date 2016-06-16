@@ -39,29 +39,38 @@
 
     $scope.generateRandomNumber();
 
+    $scope.intervalNumber = 1;
+
     $scope.startTimer = function(){
-      $interval($scope.generateRandomNumber, 3000);
+      $scope.timer = $interval($scope.generateRandomNumber, $scope.intervalNumber * 1000);
+    };
+
+    $scope.stopTimer = function(){
+      $interval.cancel($scope.timer);
     };
 
     $scope.refreshPage = function(){
       $route.reload();
     };
 
-    $scope.intervalNumber = 1;
-
     $scope.formatNumber = function(num){
       return (num < 10) ? '0' + num.toString() : num.toString();
     };
 
-    $scope.updateIntervalNumberParts = function(){
+    $scope.updateIntervalNumber = function(){
       $scope.intervalNumberParts = $scope.formatNumber($scope.intervalNumber).split("");
     };
 
-    $scope.updateIntervalNumberParts();
+    $scope.updateIntervalNumber();
 
     $scope.increaseInterval = function(){
       $scope.intervalNumber++;
-      $scope.updateIntervalNumberParts();
+      $scope.updateIntervalNumber();
+    };
+
+    $scope.decreaseInterval = function(){
+      $scope.intervalNumber--;
+      $scope.updateIntervalNumber();
     };
 
   }]);
