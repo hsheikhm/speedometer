@@ -60,7 +60,7 @@
       watch: {
         sass: {
           files: "public/src/css/sass/*.sass",
-          tasks: ['sass']
+          tasks: ['sass', 'cssmin']
         },
         app: {
           files: ['<%= jshint.files %>'],
