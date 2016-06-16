@@ -3,64 +3,59 @@
 
   var speedometerAppControllers = angular.module('speedometerAppControllers', []);
 
-  speedometerAppControllers.controller('MainCtrl', ['$scope', '$interval', '$route',
-    function($scope, $interval, $route){
+  speedometerAppControllers.controller('MainCtrl', ['$scope', '$interval', '$route', 'Speedometer', 'Countdown',
+    function($scope, $interval, $route, Speedometer, Countdown){
 
-    $scope.generateRandomNumber = function(){
-      $scope.randomNumber = Math.floor(Math.random() * 100) + 1;
-    };
+      var speedometer = new Speedometer();
+      var countdown = new Countdown();
 
-    $scope.generateRandomNumber();
+      $scope.mainNumber = speedometer.generateRandomNumber();
 
-    $scope.intervalNumber = 1;
+      $scope.increase = function(){
+        speedometer.increaseInterval();
+        $scope.updateInteval();
+      };
 
-    $scope.startTimer = function(){
-      $scope.countdownNumber = $scope.intervalNumber;
-      $scope.updateCountdownNumber();
-      $scope.timer = $interval($scope.generateRandomNumber, $scope.intervalNumber * 1000);
-      $scope.countdownTimer = $interval($scope.startCountdown, 1000);
-    };
+      $scope.decrease = function(){
+        speedometer.decreaseInterval();
+        $scope.updateInteval();
+      };
 
-    $scope.stopTimer = function(){
-      $interval.cancel($scope.timer);
-      $interval.cancel($scope.countdownTimer);
-    };
+      $scope.updateInteval = function(){
+        $scope.intervalNumberParts = speedometer.updateInterval();
+      };
 
-    $scope.startCountdown = function(){
-      $scope.countdownNumber--;
-      $scope.updateCountdownNumber();
-    };
+      $scope.updateInteval();
 
-    $scope.updateCountdownNumber = function(){
-      if($scope.countdownNumber === 0){
-        $scope.countdownNumber = $scope.intervalNumber;
-      }
-      $scope.countdownNumberParts = $scope.formatNumber($scope.countdownNumber).split("");
-    };
+      $scope.startTimer = function(){
+        countdown.setTo(speedometer.interval);
+        $scope.updateCountdown();
+        $scope.intervalTimer = $interval($scope.changeMainNumber, speedometer.interval * 1000);
+        $scope.countdownTimer = $interval($scope.startCountdown, 1000);
+      };
 
-    $scope.refreshPage = function(){
-      $route.reload();
-    };
+      $scope.changeMainNumber = function(){
+        $scope.mainNumber = speedometer.generateRandomNumber();
+      };
 
-    $scope.formatNumber = function(num){
-      return (num < 10) ? '0' + num.toString() : num.toString();
-    };
+      $scope.startCountdown = function(){
+        countdown.play();
+        $scope.updateCountdown();
+      };
 
-    $scope.updateIntervalNumber = function(){
-      $scope.intervalNumberParts = $scope.formatNumber($scope.intervalNumber).split("");
-    };
+      $scope.updateCountdown = function(){
+        if(countdown.isFinished()){ countdown.setTo(speedometer.interval); }
+        $scope.countdownNumberParts = countdown.updateNumber();
+      };
 
-    $scope.updateIntervalNumber();
+      $scope.stopTimer = function(){
+        $interval.cancel($scope.intervalTimer);
+        $interval.cancel($scope.countdownTimer);
+      };
 
-    $scope.increaseInterval = function(){
-      $scope.intervalNumber++;
-      $scope.updateIntervalNumber();
-    };
-
-    $scope.decreaseInterval = function(){
-      $scope.intervalNumber--;
-      $scope.updateIntervalNumber();
-    };
+      $scope.refreshPage = function(){
+        $route.reload();
+      };
 
   }]);
 

@@ -5,7 +5,8 @@
     'ngRoute',
     'ngResource',
     'ngAnimate',
-    'speedometerAppControllers'
+    'speedometerAppControllers',
+    'speedometerAppFactories'
   ]);
 
   speedometerApp.config(['$routeProvider',
