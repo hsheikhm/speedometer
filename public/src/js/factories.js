@@ -17,8 +17,12 @@
       };
 
       this.decreaseInterval = function(){
-        this.interval--;
+        if(this.intervalIsAboveOne()){ this.interval--; }
         this.updateInterval();
+      };
+
+      this.intervalIsAboveOne = function(){
+        return this.interval !== 1;
       };
 
       this.formatInterval = function(){
