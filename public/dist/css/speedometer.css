@@ -23,6 +23,9 @@
     opacity: 0; }
   to {
     opacity: 1; } }
+body {
+  background-image: url("../../src/img/greyzz_@2X.png"); }
+
 main {
   font-family: "Raleway", sans-serif; }
 
@@ -35,7 +38,7 @@ main {
 .main-page__heading__text {
   font-style: italic;
   font-variant: small-caps;
-  font-weight: 100;
+  font-weight: 600;
   font-size: 56px; }
 
 .main-page__number-display {
@@ -109,6 +112,7 @@ main {
   font-weight: bold;
   margin-left: 5px;
   margin-right: 5px;
+  background-color: white;
   -webkit-box-shadow: 0px 0px 25px -1px rgba(143, 140, 143, 0.75);
   -moz-box-shadow: 0px 0px 25px -1px rgba(143, 140, 143, 0.75);
   box-shadow: 0px 0px 25px -1px rgba(143, 140, 143, 0.75); }
@@ -146,9 +150,15 @@ main {
 .start-timer-button {
   padding-left: 12px;
   padding-right: 12px;
-  background-color: #388e3c; }
+  background-color: #388e3c;
+  opacity: 1; }
   .start-timer-button:hover {
     background-color: #1b5e20; }
+  .start-timer-button.ng-hide {
+    opacity: 0; }
+
+.start-timer-button.ng-hide-add, .start-timer-button.ng-hide-remove {
+  transition: all linear 0.8s; }
 
 .stop-timer-button {
   padding-left: 16px;
@@ -186,6 +196,7 @@ main {
   margin-left: 5px;
   margin-right: 5px;
   color: #b71c1c;
+  background-color: white;
   -webkit-box-shadow: 0px 0px 25px 2px rgba(143, 140, 143, 0.75);
   -moz-box-shadow: 0px 0px 25px 2px rgba(143, 140, 143, 0.75);
   box-shadow: 0px 0px 25px 2px rgba(143, 140, 143, 0.75); }

@@ -108,7 +108,7 @@
   speedometerAppFactories.factory('Speedometer', function(){
     function speedometer(){
 
-      this.interval = 1;
+      this.interval = 5;
 
       this.generateRandomNumber = function(){
         return Math.floor(Math.random() * 100) + 1;
