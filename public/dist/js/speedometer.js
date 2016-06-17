@@ -83,7 +83,7 @@
       };
 
       $scope.changeBackgroundColor = function(){
-        $scope.mainNumberBackgroundColor = speedometer.backgroundColors[Math.floor(Math.random() * speedometer.backgroundColors.length)];
+        $scope.mainNumberBackgroundColor = speedometer.chooseBackgroundColor();
       };
 
       $scope.stopTimer = function(){
@@ -138,6 +138,10 @@
       };
 
       this.backgroundColors =  ['#ef5350', '#ec407a', '#880e4f', '#9c27b0', '#512da8', '#3949ab', '#2196f3', '#0097a7', '#00897b', '#388e3c', '#ff9800', '#6d4c41', '#607d8b', '#000000'];
+
+      this.chooseBackgroundColor = function(){
+        return this.backgroundColors[Math.floor(Math.random() * this.backgroundColors.length)];
+      };
 
     }
     return speedometer;

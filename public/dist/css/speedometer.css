@@ -204,7 +204,7 @@ main {
 .main-page__countdown.ng-hide-add, .main-page__countdown.ng-hide-remove {
   transition: all linear 0.8s; }
 
-.main-page__countdown__title, .main-page__instructions__title {
+.main-page__countdown__title {
   font-style: italic;
   font-variant: small-caps;
   font-weight: bold;
@@ -233,6 +233,10 @@ main {
   margin-top: -262px; }
 
 .main-page__instructions__title {
+  font-style: italic;
+  font-variant: small-caps;
+  font-weight: bold;
+  font-size: 30px;
   margin-left: 80px; }
 
 .main-page__instructions__points {
