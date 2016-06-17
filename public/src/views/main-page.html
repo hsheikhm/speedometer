@@ -11,24 +11,35 @@
       <span class="main-page__number-display__text">{{ mainNumber }}</span>
     </div>
 
-    <div class="main_page__countdown right center-align" ng-show="countdownDisplayOn">
-      <span class="main_page__countdown__title">Next Number</span>
-      <div class="main_page__countdown__numbers">
+    <div class="main-page__countdown right center-align" ng-show="countdownDisplayOn">
+      <span class="main-page__countdown__title">Next Number</span>
+      <div class="main-page__countdown__numbers">
         <div class="countdown-digit">{{ countdownNumberParts[0] }}</div>
         <div class="countdown-digit">{{ countdownNumberParts[1] }}</div>
       </div>
     </div>
 
+    <!-- <div class="main-page__instructions left center-align">
+      <span class="main-page__instructions__title">Instructions</span>
+      <p>
+        You can generate a random number between 1-100:
+        - Either immediatedly by clicking on the 'refresh' button.
+        - Or by setting a timed interval.
+        - Interval: Select how many seconds using the arrows and then click on 'start'.
+        Yes they should click on stop before choosing another inteval - also hide the arrows too when countdown clock is on
+      </p>
+    </div> -->
+
     <div class="main-page__interval-setter center-align">
       <div class="main-page__interval-setter__center-box">
         <span class="interval-setter__title">Set Interval</span>
-        <div class="interval-setter__middle-section">
+        <div class="interval-setter__middle-section" ng-class="{'interval-setter__middle-section--transition': countdownDisplayOn}">
           <span class="middle-section__every-word">Every</span>
           <div class="middle-section__interval-numbers">
             <div class="interval-number">{{ intervalNumberParts[0] }}</div>
             <div class="interval-number">{{ intervalNumberParts[1] }}</div>
           </div>
-          <div class="middle-section__arrow-buttons">
+          <div class="middle-section__arrow-buttons" ng-hide="countdownDisplayOn">
             <a class="waves-effect waves-light increase-button" ng-click="increase()"><i class="material-icons arrow">play_arrow</i></a>
             <a class="waves-effect waves-light decrease-button" ng-click="decrease()"><i class="material-icons arrow">play_arrow</i></a>
           </div>
@@ -36,7 +47,7 @@
         </div>
         <div class="interval-setter__bottom-section">
           <a class="waves-effect waves-light btn start-timer-button" ng-click="startTimer()" ng-hide="countdownDisplayOn">Start</a>
-          <a class="waves-effect waves-light btn stop-timer-button" ng-click="stopTimer()">Stop</a>
+          <a class="waves-effect waves-light btn stop-timer-button" ng-click="stopTimer()" ng-class="{'stop-timer-button--transition': countdownDisplayOn}">Stop</a>
         </div>
       </div>
     </div>

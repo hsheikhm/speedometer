@@ -59,6 +59,13 @@ main
   display: flex
   margin-top: 22px
 
+.interval-setter__middle-section--transition
+  margin-left: 50px
+  -webkit-transition: margin-left 1s
+  transition: margin-left 1s
+  transition-delay: 1s
+  transition-timing-function: ease-out
+
 .middle-section__every-word
   font-size: 20px
   font-variant: small-caps
@@ -71,7 +78,7 @@ main
   font-variant: small-caps
   font-weight: bold
   margin-top: 7px
-  margin-left: 10px
+  margin-left: 3px
 
 .middle-section__interval-numbers
   display: flex
@@ -91,8 +98,14 @@ main
 
 .middle-section__arrow-buttons
   margin-top: 5px
-  margin-left: 5px
+  margin-left: -13px
   display: inline-flex
+
+  &.ng-hide
+    opacity: 0
+
+.middle-section__arrow-buttons.ng-hide-add, .middle-section__arrow-buttons.ng-hide-remove
+  transition: all linear 0.8s
 
 .increase-button
   +rotate(270deg)
@@ -141,7 +154,14 @@ main
   &:hover
     background-color: #d50000
 
-.main_page__countdown
+.stop-timer-button--transition
+  margin-left: -13px
+  -webkit-transition: margin-left 1s
+  transition: margin-left 1s
+  transition-delay: 1s
+  transition-timing-function: ease-out
+
+.main-page__countdown
   margin-top: -262px
   margin-right: -35px
   opacity: 1
@@ -149,16 +169,16 @@ main
   &.ng-hide
     opacity: 0
 
-.main_page__countdown.ng-hide-add, .main_page__countdown.ng-hide-remove
+.main-page__countdown.ng-hide-add, .main-page__countdown.ng-hide-remove
   transition: all linear 0.8s
 
-.main_page__countdown__title
+.main-page__countdown__title
   font-style: italic
   font-variant: small-caps
   font-weight: bold
   font-size: 23px
 
-.main_page__countdown__numbers
+.main-page__countdown__numbers
   margin-top: 22px
   display: flex
 
