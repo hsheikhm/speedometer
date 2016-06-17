@@ -10,6 +10,7 @@
       var countdown = new Countdown();
 
       $scope.mainNumber = speedometer.generateRandomNumber();
+      $scope.mainNumberBackgroundColor = speedometer.backgroundColors[0];
       $scope.countdownDisplayOn = false;
 
       $scope.increase = function(){
@@ -46,8 +47,15 @@
       };
 
       $scope.updateCountdown = function(){
-        if(countdown.isFinished()){ countdown.setTo(speedometer.interval); }
+        if(countdown.isFinished()){
+          countdown.setTo(speedometer.interval);
+          $scope.changeBackgroundColor();
+        }
         $scope.countdownNumberParts = countdown.updateNumber();
+      };
+
+      $scope.changeBackgroundColor = function(){
+        $scope.mainNumberBackgroundColor = speedometer.backgroundColors[Math.floor(Math.random() * speedometer.backgroundColors.length)];
       };
 
       $scope.stopTimer = function(){

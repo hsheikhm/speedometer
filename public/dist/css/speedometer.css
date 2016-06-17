@@ -45,9 +45,10 @@ main {
   margin-top: 23px;
   border-radius: 50%;
   padding-top: 14px;
-  -webkit-box-shadow: 0px 0px 25px 6px rgba(143, 140, 143, 0.75);
-  -moz-box-shadow: 0px 0px 25px 6px rgba(143, 140, 143, 0.75);
-  box-shadow: 0px 0px 25px 6px rgba(143, 140, 143, 0.75); }
+  color: white;
+  -webkit-box-shadow: 0px 0px 25px 8px rgba(143, 140, 143, 0.75);
+  -moz-box-shadow: 0px 0px 25px 8px rgba(143, 140, 143, 0.75);
+  box-shadow: 0px 0px 25px 8px rgba(143, 140, 143, 0.75); }
   .main-page__number-display:hover {
     -webkit-box-shadow: 0px 0px 25px 15px rgba(143, 140, 143, 0.75);
     -moz-box-shadow: 0px 0px 25px 15px rgba(143, 140, 143, 0.75);

@@ -34,6 +34,8 @@
         return this.formatInterval().split("");
       };
 
+      this.backgroundColors =  ['#ef5350', '#ec407a', '#880e4f', '#9c27b0', '#512da8', '#3949ab', '#2196f3', '#0097a7', '#00897b', '#388e3c', '#ff9800', '#6d4c41', '#607d8b', '#000000'];
+
     }
     return speedometer;
   });
