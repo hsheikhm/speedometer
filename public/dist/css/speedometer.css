@@ -269,11 +269,13 @@ main {
   .main-page__number-display__text {
     font-size: 8em; }
 
-  .main-page__countdown {
+  .main-page__countdown, .main-page__countdown.ng-hide:not(.ng-hide-animate) {
     float: none !important;
     margin-top: -422px;
     margin-left: auto;
     margin-right: auto;
+    display: block !important;
+    opacity: 1 !important;
     -webkit-transition: margin-top 1s, margin-right 1s;
     transition: margin-top 1s, margin-right 1s;
     transition-timing-function: ease-out; }
