@@ -38,6 +38,7 @@
       var countdown = new Countdown();
 
       $scope.mainNumber = speedometer.generateRandomNumber();
+      $scope.countdownDisplayOn = false;
 
       $scope.increase = function(){
         speedometer.increaseInterval();
@@ -56,6 +57,7 @@
       $scope.updateInteval();
 
       $scope.startTimer = function(){
+        $scope.countdownDisplayOn = true;
         countdown.setTo(speedometer.interval);
         $scope.updateCountdown();
         $scope.intervalTimer = $interval($scope.changeMainNumber, speedometer.interval * 1000);
@@ -79,6 +81,7 @@
       $scope.stopTimer = function(){
         $interval.cancel($scope.intervalTimer);
         $interval.cancel($scope.countdownTimer);
+        $scope.countdownDisplayOn = false;
       };
 
       $scope.refreshPage = function(){

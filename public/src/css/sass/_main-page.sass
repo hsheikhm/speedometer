@@ -132,6 +132,13 @@ main
 .main_page__countdown
   margin-top: -262px
   margin-right: -35px
+  opacity: 1
+
+  &.ng-hide
+    opacity: 0
+
+.main_page__countdown.ng-hide-add, .main_page__countdown.ng-hide-remove
+  transition: all linear 0.8s
 
 .main_page__countdown__title
   font-style: italic
