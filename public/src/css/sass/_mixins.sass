@@ -1,4 +1,19 @@
-=primary-box-shadow()
-  -webkit-box-shadow: 0px 0px 25px 6px rgba(143,140,143,0.75)
-  -moz-box-shadow: 0px 0px 25px 6px rgba(143,140,143,0.75)
-  box-shadow: 0px 0px 25px 6px rgba(143,140,143,0.75)
+=primary-box-shadow($thickness)
+  -webkit-box-shadow: 0px 0px 25px $thickness rgba(143,140,143,0.75)
+  -moz-box-shadow: 0px 0px 25px $thickness rgba(143,140,143,0.75)
+  box-shadow: 0px 0px 25px $thickness rgba(143,140,143,0.75)
+
+=primary-styling-for-titles
+  font-style: italic
+  font-variant: small-caps
+  font-weight: bold
+  font-size: 30px
+
+=rotate($degrees)
+  -ms-transform: rotate($degrees)
+  -webkit-transform: rotate($degrees)
+  transform: rotate($degrees)
+
+=height-width($height, $width)
+  height: $height
+  width: $width

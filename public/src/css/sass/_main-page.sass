@@ -1,24 +1,208 @@
+body
+  background-image: url('../../src/img/greyzz_@2X.png')
+
 main
   font-family: $primary-font-family
 
-.main-page__number-display
-  height: 300px
-  width: 300px
+.main-page__top-section
+  display: flex
+  width: 373px
   margin: auto
-  margin-top: 160px
+  margin-top: 8px
+
+.main-page__top-section--underline
+  width: 400px
+  margin: auto
+
+.main-page__heading__text
+  font-style: italic
+  font-variant: small-caps
+  font-weight: 600
+  font-size: 56px
+
+.main-page__number-display
+  +height-width(330px, 330px)
+  margin: auto
+  margin-top: 35px
   border-radius: 50%
-  padding-top: 20px
-  padding-bottom: 20px
-  +primary-box-shadow
+  padding-top: 14px
+  color: white
+  +primary-box-shadow(8px)
 
   &:hover
-    -webkit-box-shadow: 0 0 25px 15px rgba(143,140,143,0.75)
-    -moz-box-shadow: 0 0 25px 15px rgba(143,140,143,0.75)
-    box-shadow: 0 0 25px 15px rgba(143,140,143,.75)
+    +primary-box-shadow(15px)
+    -webkit-transform: rotate(360deg)
+    transform: rotate(360deg)
+    transition: transform 1s
 
 .main-page__number-display__text
-  font-size: 10em
-  font-weight: 100
+  font-size: 12em
+  font-weight: 200
 
-.main-page__refresh-page-feature
-  margin-top: 40px
+.refresh-page-button
+  margin-top: 20px
+  margin-right: 20px
+
+  i
+    font-size: 2.6rem
+
+    &:hover
+      font-size: 2.8rem
+
+.main-page__interval-setter
+  width: 390px
+  margin: auto
+  margin-top: 26px
+  margin-bottom: 20px
+
+.interval-setter__title
+  +primary-styling-for-titles
+
+.interval-setter__middle-section
+  display: flex
+  margin-top: 22px
+
+.interval-setter__middle-section--transition
+  margin-left: 50px
+  -webkit-transition: margin-left 1s
+  transition: margin-left 1s
+  transition-delay: 1s
+  transition-timing-function: ease-out
+
+.middle-section__every-word
+  font-size: 20px
+  font-variant: small-caps
+  font-weight: bold
+  margin-right: 25px
+  margin-top: 7px
+
+.middle-section__seconds-word
+  font-size: 20px
+  font-variant: small-caps
+  font-weight: bold
+  margin-top: 7px
+  margin-left: 3px
+
+.middle-section__interval-numbers
+  display: flex
+  width: 140px
+
+.interval-number
+  +height-width(50px, 50px)
+  padding-top: 5px
+  padding-bottom: 5px
+  font-size: 27px
+  font-weight: bold
+  margin-left: 5px
+  margin-right: 5px
+  background-color: white
+  +primary-box-shadow(-1px)
+
+.middle-section__arrow-buttons
+  margin-top: 5px
+  margin-left: -13px
+  display: inline-flex
+
+  &.ng-hide
+    opacity: 0
+
+.middle-section__arrow-buttons.ng-hide-add, .middle-section__arrow-buttons.ng-hide-remove
+  transition: all linear 0.8s
+
+.increase-button
+  +rotate(270deg)
+  +height-width(55px, 55px)
+
+  &:hover
+    color: #0d47a1
+
+.decrease-button
+  +rotate(90deg)
+  +height-width(55px, 55px)
+  margin-top: -16px
+
+  &:hover
+    color: #0d47a1
+
+.arrow
+  font-size: 65px
+
+.interval-setter__bottom-section
+  margin-top: 22px
+
+.start-timer-button
+  padding-left: 12px
+  padding-right: 12px
+  background-color: #388e3c
+  opacity: 1
+
+  &:hover
+    background-color: #1b5e20
+
+  &.ng-hide
+    opacity: 0
+
+.start-timer-button.ng-hide-add, .start-timer-button.ng-hide-remove
+  transition: all linear 0.8s
+
+.stop-timer-button
+  padding-left: 16px
+  padding-right: 16px
+  background-color: #ff5252
+  margin-left: 10px
+
+  &:hover
+    background-color: #d50000
+
+.stop-timer-button--transition
+  margin-left: -13px
+  -webkit-transition: margin-left 1s
+  transition: margin-left 1s
+  transition-delay: 1s
+  transition-timing-function: ease-out
+
+.main-page__countdown
+  margin-top: -262px
+  margin-right: -35px
+  opacity: 1
+
+  &.ng-hide
+    opacity: 0
+
+.main-page__countdown.ng-hide-add, .main-page__countdown.ng-hide-remove
+  transition: all linear 0.8s
+
+.main-page__countdown__title
+  +primary-styling-for-titles
+
+.main-page__countdown__numbers
+  margin-top: 22px
+  display: flex
+
+.countdown-digit
+  +height-width(114px, 100px)
+  font-size: 71px
+  font-weight: 300
+  margin-left: 5px
+  margin-right: 5px
+  color: #b71c1c
+  background-color: white
+  +primary-box-shadow(2px)
+
+.main-page__instructions
+  width: 326px
+  margin-left: -129px
+  margin-top: -262px
+
+.main-page__instructions__title
+  +primary-styling-for-titles
+  margin-left: 80px
+
+.main-page__instructions__points
+  font-size: 18px
+  font-variant: small-caps
+  font-weight: bold
+  font-style: italic
+
+.main-page__instructions__text
+  margin-bottom: -12px

@@ -5,7 +5,7 @@
   speedometerAppFactories.factory('Speedometer', function(){
     function speedometer(){
 
-      this.interval = 1;
+      this.interval = 5;
 
       this.generateRandomNumber = function(){
         return Math.floor(Math.random() * 100) + 1;
@@ -34,6 +34,12 @@
         return this.formatInterval().split("");
       };
 
+      this.backgroundColors =  ['#ef5350', '#ec407a', '#880e4f', '#9c27b0', '#512da8', '#3949ab', '#2196f3', '#0097a7', '#00897b', '#388e3c', '#ff9800', '#6d4c41', '#607d8b', '#000000'];
+
+      this.chooseBackgroundColor = function(){
+        return this.backgroundColors[Math.floor(Math.random() * this.backgroundColors.length)];
+      };
+
     }
     return speedometer;
   });
@@ -53,10 +59,6 @@
 
       this.isFinished = function(){
         return this.number === 0;
-      };
-
-      this.restart = function(startingNumber){
-        this.number = startingNumber;
       };
 
       this.formatNumber = function(){

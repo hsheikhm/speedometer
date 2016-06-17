@@ -38,6 +38,8 @@
       var countdown = new Countdown();
 
       $scope.mainNumber = speedometer.generateRandomNumber();
+      $scope.mainNumberBackgroundColor = speedometer.backgroundColors[0];
+      $scope.countdownDisplayOn = false;
 
       $scope.increase = function(){
         speedometer.increaseInterval();
@@ -56,6 +58,7 @@
       $scope.updateInteval();
 
       $scope.startTimer = function(){
+        $scope.countdownDisplayOn = true;
         countdown.setTo(speedometer.interval);
         $scope.updateCountdown();
         $scope.intervalTimer = $interval($scope.changeMainNumber, speedometer.interval * 1000);
@@ -72,13 +75,21 @@
       };
 
       $scope.updateCountdown = function(){
-        if(countdown.isFinished()){ countdown.setTo(speedometer.interval); }
+        if(countdown.isFinished()){
+          countdown.setTo(speedometer.interval);
+          $scope.changeBackgroundColor();
+        }
         $scope.countdownNumberParts = countdown.updateNumber();
+      };
+
+      $scope.changeBackgroundColor = function(){
+        $scope.mainNumberBackgroundColor = speedometer.chooseBackgroundColor();
       };
 
       $scope.stopTimer = function(){
         $interval.cancel($scope.intervalTimer);
         $interval.cancel($scope.countdownTimer);
+        $scope.countdownDisplayOn = false;
       };
 
       $scope.refreshPage = function(){
@@ -97,7 +108,7 @@
   speedometerAppFactories.factory('Speedometer', function(){
     function speedometer(){
 
-      this.interval = 1;
+      this.interval = 5;
 
       this.generateRandomNumber = function(){
         return Math.floor(Math.random() * 100) + 1;
@@ -126,6 +137,12 @@
         return this.formatInterval().split("");
       };
 
+      this.backgroundColors =  ['#ef5350', '#ec407a', '#880e4f', '#9c27b0', '#512da8', '#3949ab', '#2196f3', '#0097a7', '#00897b', '#388e3c', '#ff9800', '#6d4c41', '#607d8b', '#000000'];
+
+      this.chooseBackgroundColor = function(){
+        return this.backgroundColors[Math.floor(Math.random() * this.backgroundColors.length)];
+      };
+
     }
     return speedometer;
   });
@@ -145,10 +162,6 @@
 
       this.isFinished = function(){
         return this.number === 0;
-      };
-
-      this.restart = function(startingNumber){
-        this.number = startingNumber;
       };
 
       this.formatNumber = function(){
