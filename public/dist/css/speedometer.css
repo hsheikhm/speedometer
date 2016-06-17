@@ -35,6 +35,10 @@ main {
   margin: auto;
   margin-top: 8px; }
 
+.main-page__top-section--underline {
+  width: 400px;
+  margin: auto; }
+
 .main-page__heading__text {
   font-style: italic;
   font-variant: small-caps;
@@ -45,7 +49,7 @@ main {
   height: 330px;
   width: 330px;
   margin: auto;
-  margin-top: 23px;
+  margin-top: 35px;
   border-radius: 50%;
   padding-top: 14px;
   color: white;
@@ -55,7 +59,10 @@ main {
   .main-page__number-display:hover {
     -webkit-box-shadow: 0px 0px 25px 15px rgba(143, 140, 143, 0.75);
     -moz-box-shadow: 0px 0px 25px 15px rgba(143, 140, 143, 0.75);
-    box-shadow: 0px 0px 25px 15px rgba(143, 140, 143, 0.75); }
+    box-shadow: 0px 0px 25px 15px rgba(143, 140, 143, 0.75);
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+    transition: transform 1s; }
 
 .main-page__number-display__text {
   font-size: 12em;
@@ -72,14 +79,14 @@ main {
 .main-page__interval-setter {
   width: 390px;
   margin: auto;
-  margin-top: 40px;
+  margin-top: 26px;
   margin-bottom: 20px; }
 
 .interval-setter__title {
   font-style: italic;
   font-variant: small-caps;
   font-weight: bold;
-  font-size: 23px; }
+  font-size: 30px; }
 
 .interval-setter__middle-section {
   display: flex;
@@ -197,11 +204,11 @@ main {
 .main-page__countdown.ng-hide-add, .main-page__countdown.ng-hide-remove {
   transition: all linear 0.8s; }
 
-.main-page__countdown__title {
+.main-page__countdown__title, .main-page__instructions__title {
   font-style: italic;
   font-variant: small-caps;
   font-weight: bold;
-  font-size: 23px; }
+  font-size: 30px; }
 
 .main-page__countdown__numbers {
   margin-top: 22px;
@@ -219,5 +226,22 @@ main {
   -webkit-box-shadow: 0px 0px 25px 2px rgba(143, 140, 143, 0.75);
   -moz-box-shadow: 0px 0px 25px 2px rgba(143, 140, 143, 0.75);
   box-shadow: 0px 0px 25px 2px rgba(143, 140, 143, 0.75); }
+
+.main-page__instructions {
+  width: 326px;
+  margin-left: -129px;
+  margin-top: -262px; }
+
+.main-page__instructions__title {
+  margin-left: 80px; }
+
+.main-page__instructions__points {
+  font-size: 18px;
+  font-variant: small-caps;
+  font-weight: bold;
+  font-style: italic; }
+
+.main-page__instructions__text {
+  margin-bottom: -12px; }
 
 /*# sourceMappingURL=speedometer.css.map */
