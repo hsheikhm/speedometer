@@ -10,6 +10,20 @@
       });
     });
 
+    describe('Interval Setter', function(){
+
+      beforeEach(function(){
+        browser.get('index.html');
+      });
+
+      it("should already be set at 5 seconds on page load", function(){
+        var intervalNumbers = element.all(by.css('.interval-number')).getText().then(function(text){
+          expect(text.join("")).toEqual('05');
+        });
+      });
+
+    });
+
   });
 
 }());
