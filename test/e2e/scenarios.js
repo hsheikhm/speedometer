@@ -10,6 +10,14 @@
       });
     });
 
+    it("clicking on the page refresh button will generate a new random number", function(){
+      browser.get('index.html');
+      var randomNumberOne = element(by.css('.main-page__number-display__text')).getText();
+      element(by.css('.refresh-page-button')).click();
+      var randomNumberTwo = element(by.css('.main-page__number-display__text')).getText();
+      expect(randomNumberOne === randomNumberTwo).toBe(false);
+    });
+
     describe('Interval Setter', function(){
 
       beforeEach(function(){
