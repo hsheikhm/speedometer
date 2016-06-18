@@ -3,15 +3,18 @@
 
   describe('speedometerApp', function(){
 
-    it("should redirect index.html to index.html#/speedometer", function(){
+    beforeEach(function(){
       browser.get('index.html');
+      browser.driver.manage().window().maximize();
+    });
+
+    it("should redirect index.html to index.html#/speedometer", function(){
       browser.getLocationAbsUrl().then(function(url){
         expect(url).toEqual('/speedometer');
       });
     });
 
     it("clicking on the page refresh button will generate a new random number", function(){
-      browser.get('index.html');
       var randomNumberOne = element(by.css('.main-page__number-display__text')).getText();
       element(by.css('.refresh-page-button')).click();
       var randomNumberTwo = element(by.css('.main-page__number-display__text')).getText();
@@ -19,10 +22,6 @@
     });
 
     describe('Interval Setter', function(){
-
-      beforeEach(function(){
-        browser.get('index.html');
-      });
 
       var getIntervalNumbers = function(){
         return element.all(by.css('.interval-number')).getText().then(function(text){
@@ -62,6 +61,44 @@
         expect(element(by.css('.middle-section__arrow-buttons')).isDisplayed()).toBe(false);
         element(by.css('.stop-timer-button')).click();
         expect(element(by.css('.middle-section__arrow-buttons')).isDisplayed()).toBe(true);
+      });
+
+      it("a new random number should be generated after each complete interval", function(){
+        var randomNumberOne = element(by.css('.main-page__number-display__text')).getText();
+        element(by.css('.start-timer-button')).click();
+        browser.sleep(7000);
+        element(by.css('.stop-timer-button')).click();
+        var randomNumberTwo = element(by.css('.main-page__number-display__text')).getText();
+        expect(randomNumberOne === randomNumberTwo).toBe(false);
+      });
+
+      it("a different background color for the main number should be displayed after each complete interval", function(){
+        var backgroundColorOne = element(by.css('.main-page__number-display__text')).getCssValue('background-color');
+        element(by.css('.start-timer-button')).click();
+        browser.sleep(7000);
+        element(by.css('.stop-timer-button')).click();
+        var backgroundColorTwo = element(by.css('.main-page__number-display__text')).getCssValue('background-color');
+        expect(backgroundColorOne === backgroundColorTwo).toBe(false);
+      });
+
+    });
+
+    describe('Countdown Clock', function(){
+
+      it("should not be visible on page load", function(){
+        expect(element(by.css('.main-page__countdown')).isDisplayed()).toBe(false);
+      });
+
+      it("should be visible when the interval starts", function(){
+        element(by.css('.start-timer-button')).click();
+        expect(element(by.css('.main-page__countdown')).isDisplayed()).toBe(true);
+      });
+
+      it("should not be visible when the interval stops", function(){
+        element(by.css('.start-timer-button')).click();
+        expect(element(by.css('.main-page__countdown')).isDisplayed()).toBe(true);
+        element(by.css('.stop-timer-button')).click();
+        expect(element(by.css('.main-page__countdown')).isDisplayed()).toBe(false);
       });
 
     });
