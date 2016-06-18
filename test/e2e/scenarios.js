@@ -44,6 +44,13 @@
         expect(getIntervalNumbers()).toEqual('04');
       });
 
+      it("user should not be able to go below 1 second when setting the interval", function(){
+        for(var i=0; i<7; i++){
+          element(by.css('.decrease-button')).click();
+        }
+        expect(getIntervalNumbers()).toEqual('01');
+      });
+
     });
 
   });
