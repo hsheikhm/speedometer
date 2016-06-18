@@ -51,6 +51,19 @@
         expect(getIntervalNumbers()).toEqual('01');
       });
 
+      it("the increase and decrease buttons should dissapear once the interval starts", function(){
+        expect(element(by.css('.middle-section__arrow-buttons')).isDisplayed()).toBe(true);
+        element(by.css('.start-timer-button')).click();
+        expect(element(by.css('.middle-section__arrow-buttons')).isDisplayed()).toBe(false);
+      });
+
+      it("clicking on the stop button should bring the increase and decrease buttons back into view", function(){
+        element(by.css('.start-timer-button')).click();
+        expect(element(by.css('.middle-section__arrow-buttons')).isDisplayed()).toBe(false);
+        element(by.css('.stop-timer-button')).click();
+        expect(element(by.css('.middle-section__arrow-buttons')).isDisplayed()).toBe(true);
+      });
+
     });
 
   });
