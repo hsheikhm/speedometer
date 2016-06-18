@@ -248,4 +248,94 @@ main {
 .main-page__instructions__text {
   margin-bottom: -12px; }
 
+@media only screen and (max-width: 1050px) {
+  .main-page__number-display {
+    margin-top: 463px;
+    height: 230px;
+    width: 230px;
+    padding-top: 20px;
+    -webkit-transition: margin-top 1s, height 1s, width 1s;
+    transition: margin-top 1s, height 1s, width 1s;
+    transition-timing-function: ease-out; }
+
+  .main-page__instructions {
+    float: none !important;
+    margin-top: -408px;
+    margin-left: auto;
+    margin-right: auto;
+    -webkit-transition: margin-top 1s, margin-left 1s;
+    transition: margin-top 1s, margin-left 1s;
+    transition-timing-function: ease-out; }
+
+  .main-page__number-display__text {
+    font-size: 8em; }
+
+  .main-page__countdown, .main-page__countdown.ng-hide:not(.ng-hide-animate) {
+    float: none !important;
+    margin-top: -422px;
+    margin-left: auto;
+    margin-right: auto;
+    display: block !important;
+    opacity: 1 !important;
+    -webkit-transition: margin-top 1s, margin-right 1s;
+    transition: margin-top 1s, margin-right 1s;
+    transition-timing-function: ease-out; }
+
+  .main-page__countdown__numbers {
+    margin-left: auto;
+    margin-right: auto;
+    width: 180px;
+    -webkit-transition: margin-left 1s, margin-right 1s;
+    transition: margin-left 1s, margin-right 1s;
+    transition-timing-function: ease-out; }
+
+  .countdown-digit {
+    height: 84px;
+    width: 80px;
+    font-size: 49px; }
+
+  .main-page__interval-setter {
+    margin-top: 477px;
+    -webkit-transition: margin-top 1s;
+    transition: margin-top 1s;
+    transition-timing-function: ease-out; } }
+@media only screen and (max-width: 425px) {
+  a.btn-floating.waves-effect.waves-light.btn-large.refresh-page-button {
+    height: 40px;
+    width: 40px;
+    margin-top: 23px; }
+    a.btn-floating.waves-effect.waves-light.btn-large.refresh-page-button i {
+      font-size: 2rem;
+      line-height: 41px; }
+      a.btn-floating.waves-effect.waves-light.btn-large.refresh-page-button i:hover {
+        font-size: 2.4rem; }
+
+  .main-page__heading__text {
+    font-size: 47px; }
+
+  .main-page__top-section--underline {
+    width: 353px; }
+
+  .middle-section__every-word {
+    margin-right: 7px; }
+
+  .middle-section__arrow-buttons {
+    margin-left: -15px; }
+
+  .middle-section__seconds-word {
+    margin-left: -2px; }
+
+  .middle-section__interval-numbers {
+    width: 130px; }
+
+  .interval-setter__title {
+    margin-left: -39px; }
+
+  .interval-setter__bottom-section {
+    width: 158px;
+    margin-left: 97px;
+    -webkit-transition: width 1s, margin-left 1s;
+    transition: width 1s, margin-left 1s;
+    transition-timing-function: ease-out; } }
+
 /*# sourceMappingURL=speedometer.css.map */
