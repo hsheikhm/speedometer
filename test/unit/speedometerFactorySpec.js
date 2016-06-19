@@ -91,7 +91,49 @@
 
     });
 
+    describe("speedometer.formatInterval()", function(){
 
+      it("should be defined", function(){
+        expect(speedometer.formatInterval).toBeDefined();
+      });
+
+      it("should return the interval in string format", function(){
+        expect(speedometer.formatInterval()).toEqual('05');
+      });
+
+    });
+
+    describe("speedometer.updateInterval()", function(){
+
+      it("should be defined", function(){
+        expect(speedometer.updateInterval).toBeDefined();
+      });
+
+      it("should return the interval as an array of strings", function(){
+        expect(speedometer.updateInterval()).toEqual(['0', '5']);
+      });
+
+    });
+
+    describe("speedometer.backgroundColors", function(){
+
+      it("should be defined", function(){
+        expect(speedometer.backgroundColors).toBeDefined();
+      });
+
+    });
+
+    describe("speedometer.chooseBackgroundColor()", function(){
+
+      it("should be defined", function(){
+        expect(speedometer.chooseBackgroundColor).toBeDefined();
+      });
+
+      it("should return a random color from the backgroundColors array", function(){
+        expect(speedometer.backgroundColors.indexOf(speedometer.chooseBackgroundColor()) >= 0).toBe(true);
+      });
+
+    });
 
   });
 
