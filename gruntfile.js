@@ -10,7 +10,7 @@
           separator: '\n// next file:\n'
         },
         dist: {
-          src: ['public/src/js/*.js'],
+          src: ['public/src/js/**/*.js'],
           dest: 'public/dist/js/<%= pkg.name %>.js'
         }
       },
@@ -27,7 +27,7 @@
       },
 
       jshint: {
-        files: ['gruntfile.js', 'public/src/js/*.js', 'test/**/*.js'],
+        files: ['gruntfile.js', 'public/src/js/**/*.js', 'test/**/*.js'],
         options: {
           globals: {
             jQuery: true,
