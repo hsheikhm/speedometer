@@ -44,22 +44,26 @@ I definitely learnt a lot in terms of **testing AngularJS**. Since I was using s
 
 ***User sees a random number generated between 1-100 on page load/refresh:***
 
-![Random Number]()
+![Random Number](https://github.com/hsheikhm/Github-Images/blob/master/speedometer/random-number.png)
 
 ***User can set a timed interval and also see a countdown, telling them when the next random number will come:***
 
-![Interval and Countdown]()
+![Interval and Countdown](https://github.com/hsheikhm/Github-Images/blob/master/speedometer/interval-countdown.png)
 
 ***The UI is adjusted accordingly to fit on all devices:***
 
-![Responsive Design]()
-
-
+![Responsive Design](https://github.com/hsheikhm/Github-Images/blob/master/speedometer/responsive-design.png)
 
 ## Download Instructions
 
-ruby and sass must be installed.
+Follow the below instructions on your terminal to use the app:
 
-install sass via:
+```
+$ git clone https://github.com/hsheikhm/speedometer.git
+$ cd speedometer
+(Make sure you have Ruby and Sass installed - you can install Sass via 'gem install sass').
+$ npm start (this will firstly run: npm install, bower install and grunt)
+(On your browser visit: http://localhost:8000/#/speedometer)
+```
 
-'gem install sass'
+#### Author: [Hamza Sheikh](https://github.com/hsheikhm)
