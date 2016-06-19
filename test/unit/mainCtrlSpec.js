@@ -3,29 +3,18 @@
 
   describe("MainCtrl", function(){
 
-    var scope, ctrl, speedometer, Speedometer, countdown, Countdown;
+    var scope, ctrl, $intervalSpy;
 
     beforeEach(module('speedometerApp'));
 
-    beforeEach(inject(function($rootScope, $controller, _Speedometer_, _Countdown_){
-      Speedometer = _Speedometer_;
-      Countdown = _Countdown_;
-      speedometer = new Speedometer();
-      countdown = new Countdown();
+    beforeEach(inject(function($rootScope, $controller, _$interval_){
       scope = $rootScope.$new();
+      $intervalSpy = jasmine.createSpy('$interval', _$interval_);
       ctrl = $controller('MainCtrl', {
-        $scope: scope
+        $scope: scope,
+        $interval: $intervalSpy
       });
     }));
-
-    describe("Speedometer and Countdown instances", function(){
-
-      it("should both be defined", function(){
-        expect(speedometer).toBeDefined();
-        expect(countdown).toBeDefined();
-      });
-
-    });
 
     describe("$scope.mainNumber", function(){
 
@@ -87,6 +76,26 @@
         expect(scope.intervalNumberParts).toEqual(['0', '5']);
         scope.decrease();
         expect(scope.intervalNumberParts).toEqual(['0', '4']);
+      });
+
+    });
+
+    describe("scope.startTimer()", function(){
+
+      it("should be defined", function(){
+        expect(scope.startTimer).toBeDefined();
+      });
+
+      it("should set $scope.countdownDisplayOn to 'true'", function(){
+        scope.startTimer();
+        expect(scope.countdownDisplayOn).toBe(true);
+      });
+
+      it("should start the $scope.intervalTimer and $scope.countdownTimer", function(){
+        scope.increase();
+        scope.startTimer();
+        expect($intervalSpy).toHaveBeenCalledWith(scope.changeMainNumber, 6000);
+        expect($intervalSpy).toHaveBeenCalledWith(scope.startCountdown, 1000);
       });
 
     });
