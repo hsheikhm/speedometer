@@ -47,7 +47,7 @@
         expect(speedometer.increaseInterval).toBeDefined();
       });
 
-      it("should increase the interval by 1", function(){
+      it("should increase the speedometer.interval by 1", function(){
         speedometer.increaseInterval();
         expect(speedometer.interval).toEqual(6);
       });
@@ -60,12 +60,12 @@
         expect(speedometer.decreaseInterval).toBeDefined();
       });
 
-      it("should decrease the interval by 1", function(){
+      it("should decrease the speedometer.interval by 1", function(){
         speedometer.decreaseInterval();
         expect(speedometer.interval).toEqual(4);
       });
 
-      it("should not decrease the interval if it's already at 1", function(){
+      it("should not decrease the speedometer.interval if it's already at 1", function(){
         for(var i=0; i<4; i++){ speedometer.decreaseInterval(); }
         expect(speedometer.interval).toEqual(1);
         speedometer.decreaseInterval();
@@ -80,11 +80,11 @@
         expect(speedometer.intervalIsAboveOne).toBeDefined();
       });
 
-      it("should return 'true' if interval is above 1", function(){
+      it("should return 'true' if speedometer.interval is above 1", function(){
         expect(speedometer.intervalIsAboveOne()).toEqual(true);
       });
 
-      it("should return 'false' if interval is equal to 1", function(){
+      it("should return 'false' if speedometer.interval is equal to 1", function(){
         for(var i=0; i<4; i++){ speedometer.decreaseInterval(); }
         expect(speedometer.intervalIsAboveOne()).toEqual(false);
       });
@@ -97,7 +97,7 @@
         expect(speedometer.formatInterval).toBeDefined();
       });
 
-      it("should return the interval in string format", function(){
+      it("should return the speedometer.interval in string format", function(){
         expect(speedometer.formatInterval()).toEqual('05');
       });
 
@@ -109,7 +109,7 @@
         expect(speedometer.updateInterval).toBeDefined();
       });
 
-      it("should return the interval as an array of strings", function(){
+      it("should return the speedometer.interval as an array of strings", function(){
         expect(speedometer.updateInterval()).toEqual(['0', '5']);
       });
 
