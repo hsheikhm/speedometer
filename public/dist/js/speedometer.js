@@ -4,9 +4,7 @@
   var speedometerApp = angular.module('speedometerApp', [
     'ngRoute',
     'ngResource',
-    'ngAnimate',
-    'speedometerAppControllers',
-    'speedometerAppFactories'
+    'ngAnimate'
   ]);
 
   speedometerApp.config(['$routeProvider',
@@ -29,9 +27,8 @@
 (function(){
   "use strict";
 
-  var speedometerAppControllers = angular.module('speedometerAppControllers', []);
-
-  speedometerAppControllers.controller('MainCtrl', ['$scope', '$interval', '$route', 'Speedometer', 'Countdown',
+  angular.module('speedometerApp')
+    .controller('MainCtrl', ['$scope', '$interval', '$route', 'Speedometer', 'Countdown',
     function($scope, $interval, $route, Speedometer, Countdown){
 
       var speedometer = new Speedometer();
@@ -103,78 +100,83 @@
 // next file:
 (function(){
 
-  var speedometerAppFactories = angular.module('speedometerAppFactories', []);
+  angular.module('speedometerApp')
+    .factory('Countdown', function(){
+      function countdown(){
 
-  speedometerAppFactories.factory('Speedometer', function(){
-    function speedometer(){
+        this.number = 0;
 
-      this.interval = 5;
+        this.setTo = function(number){
+          this.number = number;
+        };
 
-      this.generateRandomNumber = function(){
-        return Math.floor(Math.random() * 100) + 1;
-      };
+        this.play = function(){
+          this.number--;
+        };
 
-      this.increaseInterval = function(){
-        this.interval++;
-        this.updateInterval();
-      };
+        this.isFinished = function(){
+          return this.number === 0;
+        };
 
-      this.decreaseInterval = function(){
-        if(this.intervalIsAboveOne()){ this.interval--; }
-        this.updateInterval();
-      };
+        this.formatNumber = function(){
+          var num = this.number;
+          return (num < 10) ? '0' + num.toString() : num.toString();
+        };
 
-      this.intervalIsAboveOne = function(){
-        return this.interval !== 1;
-      };
+        this.updateNumber = function(){
+          return this.formatNumber().split("");
+        };
 
-      this.formatInterval = function(){
-        var num = this.interval;
-        return (num < 10) ? '0' + num.toString() : num.toString();
-      };
+      }
+      return countdown;
+    });
 
-      this.updateInterval = function(){
-        return this.formatInterval().split("");
-      };
+}());
 
-      this.backgroundColors =  ['#ef5350', '#ec407a', '#880e4f', '#9c27b0', '#512da8', '#3949ab', '#2196f3', '#0097a7', '#00897b', '#388e3c', '#ff9800', '#6d4c41', '#607d8b', '#000000'];
+// next file:
+(function(){
 
-      this.chooseBackgroundColor = function(){
-        return this.backgroundColors[Math.floor(Math.random() * this.backgroundColors.length)];
-      };
+  angular.module('speedometerApp')
+    .factory('Speedometer', function(){
+      function speedometer(){
 
-    }
-    return speedometer;
-  });
+        this.interval = 5;
 
-  speedometerAppFactories.factory('Countdown', function(){
-    function countdown(){
+        this.generateRandomNumber = function(){
+          return Math.floor(Math.random() * 100) + 1;
+        };
 
-      this.number = 0;
+        this.increaseInterval = function(){
+          this.interval++;
+          this.updateInterval();
+        };
 
-      this.setTo = function(number){
-        this.number = number;
-      };
+        this.decreaseInterval = function(){
+          if(this.intervalIsAboveOne()){ this.interval--; }
+          this.updateInterval();
+        };
 
-      this.play = function(){
-        this.number--;
-      };
+        this.intervalIsAboveOne = function(){
+          return this.interval !== 1;
+        };
 
-      this.isFinished = function(){
-        return this.number === 0;
-      };
+        this.formatInterval = function(){
+          var num = this.interval;
+          return (num < 10) ? '0' + num.toString() : num.toString();
+        };
 
-      this.formatNumber = function(){
-        var num = this.number;
-        return (num < 10) ? '0' + num.toString() : num.toString();
-      };
+        this.updateInterval = function(){
+          return this.formatInterval().split("");
+        };
 
-      this.updateNumber = function(){
-        return this.formatNumber().split("");
-      };
+        this.backgroundColors =  ['#ef5350', '#ec407a', '#880e4f', '#9c27b0', '#512da8', '#3949ab', '#2196f3', '#0097a7', '#00897b', '#388e3c', '#ff9800', '#6d4c41', '#607d8b', '#000000'];
 
-    }
-    return countdown;
-  });
+        this.chooseBackgroundColor = function(){
+          return this.backgroundColors[Math.floor(Math.random() * this.backgroundColors.length)];
+        };
+
+      }
+      return speedometer;
+    });
 
 }());

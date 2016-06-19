@@ -4,9 +4,7 @@
   var speedometerApp = angular.module('speedometerApp', [
     'ngRoute',
     'ngResource',
-    'ngAnimate',
-    'speedometerAppControllers',
-    'speedometerAppFactories'
+    'ngAnimate'
   ]);
 
   speedometerApp.config(['$routeProvider',

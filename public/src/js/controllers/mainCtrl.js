@@ -1,9 +1,8 @@
 (function(){
   "use strict";
 
-  var speedometerAppControllers = angular.module('speedometerAppControllers', []);
-
-  speedometerAppControllers.controller('MainCtrl', ['$scope', '$interval', '$route', 'Speedometer', 'Countdown',
+  angular.module('speedometerApp')
+    .controller('MainCtrl', ['$scope', '$interval', '$route', 'Speedometer', 'Countdown',
     function($scope, $interval, $route, Speedometer, Countdown){
 
       var speedometer = new Speedometer();
