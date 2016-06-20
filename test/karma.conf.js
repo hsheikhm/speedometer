@@ -19,6 +19,8 @@ module.exports = function(config){
 
     browsers : ['Chrome', 'ChromeCanary'],
 
+    singleRun: true,
+
     customLaunchers: {
       Chrome_travis_ci: {
           base: 'Chrome',
