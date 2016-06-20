@@ -1,4 +1,4 @@
-# Speedometer [![Built with Grunt](https://cdn.gruntjs.com/builtwith.svg)](http://gruntjs.com/)
+# Speedometer [![Built with Grunt](https://cdn.gruntjs.com/builtwith.svg)](http://gruntjs.com/) [![Build Status](https://travis-ci.org/hsheikhm/speedometer.svg?branch=master)](https://travis-ci.org/hsheikhm/speedometer)
 
 * [User Stories](#user-stories)
 * [My Approach](#my-approach)
