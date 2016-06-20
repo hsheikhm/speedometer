@@ -5,4 +5,4 @@ node_js:
   - 0.6
 before_script:
   - npm install grunt-cli -g
-  - npm install body-parser
+  - npm install bower -g
